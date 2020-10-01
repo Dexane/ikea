@@ -1,8 +1,10 @@
-export const getGoods = {
+export const getData = {
     url: 'database/dataBase.json',
     get(process) {
         fetch(this.url)
+            .then((response) => response.json())
+            .then((data) => console.log(data));
     }
 };
 
-getGoods.get(console.log);
+getData.get(console.log);
